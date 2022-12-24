@@ -1,5 +1,6 @@
 import React from "react";
 import logo from "../logo.svg";
+import s from './Header.module.css';
 
 const Header=()=>{
     return <header className="App-header">
@@ -8,7 +9,9 @@ const Header=()=>{
             Edit <code>src/App.js</code> and save to reload.
         </p>
         <a
-            className="App-link"
+            className={s.App_link}
+            // className={`${s.App_link} ${s.App_link_sec}`}
+            // className={s["App-link"]}
             href="https://reactjs.org"
             target="_blank"
             rel="noopener noreferrer"
