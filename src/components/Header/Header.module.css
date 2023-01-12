@@ -1,6 +1,8 @@
 .App_link {
     color: hotpink;
 }
+
+/*app-logo classes lefts in app.css not to waste time on rewriting class names..)*/
 /*.App_link_sec {*/
 /*    background-color: mediumspringgreen;*/
 /*}*/
@@ -8,3 +10,24 @@
 /*.App-link {*/
 /*    color: hotpink;*/
 /*}*/
+
+/*.App-logo {*/
+/*    height: 40vmin;*/
+/*    pointer-events: none;*/
+/*}*/
+
+/*@media (prefers-reduced-motion: no-preference) {*/
+/*    .App-logo {*/
+/*        animation: App-logo-spin infinite 20s linear;*/
+/*    }*/
+/*}*/
+/*@keyframes App-logo-spin {*/
+/*    from {*/
+/*        transform: rotate(0deg);*/
+/*    }*/
+/*    to {*/
+/*        transform: rotate(360deg);*/
+/*    }*/
+/*}*/
+
+

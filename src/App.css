@@ -4,8 +4,20 @@ body{
   font-family: Roboto, sans-serif;
 }
 
+html{
+  overflow-x: hidden;
+}
+
+.form-control:focus {
+  /*border-color: #e8618e !important;*/
+  /*background-color: pink;*/
+  /*box-shadow: #E91E63;*/
+}
 
 
+/*.form-control:focus, .form-control:active {*/
+
+/*}*/
 
 /*.EncapsulationVisualTestingClass {*/
 /*  color: hotpink;*/
@@ -18,7 +30,7 @@ body{
 }
 
 .App-logo {
-  height: 40vmin;
+  height: 20vmin;
   pointer-events: none;
 }
 
@@ -51,3 +63,6 @@ body{
     transform: rotate(360deg);
   }
 }
+/*#category-dropdown{*/
+/*  background-color: #E91E63;*/
+/*}*/

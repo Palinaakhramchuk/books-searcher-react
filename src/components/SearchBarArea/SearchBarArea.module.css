@@ -1,3 +1,22 @@
 .SearchBarArea_block{
     background-color: mediumslateblue;
 }
+#category-dropdown{
+    background-color: #E91E63;
+    border-color: #e8618e;
+}
+#category-dropdown:hover{
+    background-color: #c71954;
+    border-color: #e73570;
+}
+
+#sort-dropdown{
+    background-color: #00d0ff;
+    border-color: #10eaea;
+}
+
+#sort-dropdown:hover{
+    background-color: #01abd2;
+    border-color: #12aece;
+}
+
