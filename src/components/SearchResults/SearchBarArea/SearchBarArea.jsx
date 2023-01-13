@@ -3,7 +3,8 @@ import s from './SearchBarArea.module.css';
 
 import {Form, FormControl, Button, Dropdown, DropdownButton, Row, Col, InputGroup} from 'react-bootstrap';
 // Container,
-const API_KEY = 'AIzaSyCNTXeVkaV73a_G3VOV8vkWxT6iyDvtMhc';
+const API_KEY = `${process.env.REACT_APP_API_KEY_GB}`;
+
 // const API_KEY = 'YourAPIKEY';
 const SearchBarArea = ({API_KEY}) => {
     const [searchTerm, setSearchTerm] = useState("");
