@@ -1,8 +1,8 @@
 import React, {useState} from 'react';
 import s from './SearchBarArea.module.css';
 
-import { Form, FormControl, Button, Dropdown, DropdownButton,  Container, Row, Col } from 'react-bootstrap';
-
+import {Form, FormControl, Button, Dropdown, DropdownButton, Row, Col, InputGroup} from 'react-bootstrap';
+// Container,
 const SearchBarArea = (props) => {
     const [searchTerm, setSearchTerm] = useState("");
     const [category, setCategory] = useState("all");
@@ -22,16 +22,27 @@ const SearchBarArea = (props) => {
             {/*    <Button variant="outline-light" type="submit">Search</Button>*/}
             {/*</Form>*/}
 
-            <Form className="d-flex justify-content-center custom-responsible-searchBar" style={{minHeight: "44px"}}>
-                <Container>
-                    <Row className="d-flex justify-content-center">
-                        <Col lg={8} md={8} sm={10} xs={8}>
-                            <FormControl type="text" placeholder="Search..." className="mr-2" value={searchTerm} onChange={(e) => setSearchTerm(e.target.value)} />
-                            <Button variant="outline-light" type="submit" onClick={handleSearch}>Search</Button>
-                        </Col>
-                    </Row>
-                    <Row className="d-inline" >
-                        <DropdownButton id={s["category-dropdown"]} title={category} className={`$["mr-2"] ${s.custom_dropdown}`}>
+            <Form className="d-flex justify-content-center custom-responsible-searchBar flex-column">
+                {/*<Container>*/}
+                {/*<Row></Row>*/}
+                    <Col className="d-flex" lg={8} md={8} sm={10} xs={8}>
+                <InputGroup className="mb-3" >
+                        <FormControl type="text" placeholder="Search..." className="mr-2" style={{minHeight: "44px"}} value={searchTerm} onChange={(e) => setSearchTerm(e.target.value)} />
+                        <Button variant="outline-light" type="submit" onClick={handleSearch}>Search</Button>
+                </InputGroup>
+                    </Col>
+                    {/*<Row className="d-flex justify-content-center">*/}
+                    {/*    <Col lg={8} md={8} sm={10} xs={8}>*/}
+                    {/*        <FormControl type="text" placeholder="Search..." className="mr-2" style={{minHeight: "44px"}} value={searchTerm} onChange={(e) => setSearchTerm(e.target.value)} />*/}
+                    {/*    </Col>*/}
+                    {/*    <Col className="mr-1">*/}
+                    {/*        <Button variant="outline-light" type="submit" onClick={handleSearch}>Search</Button>*/}
+                    {/*    </Col>*/}
+                    {/*</Row>*/}
+
+                    <Col className="d-flex justify-content-center" >
+                        <label className="me-2">Search categories:</label>
+                        <DropdownButton id={s["category-dropdown"]} title={category} className="mr-2 me-4">
                             <Dropdown.Item onClick={() => setCategory("all")}>All</Dropdown.Item>
                             <Dropdown.Item onClick={() => setCategory("art")}>Art</Dropdown.Item>
                             <Dropdown.Item onClick={() => setCategory("biography")}>Biography</Dropdown.Item>
@@ -40,15 +51,27 @@ const SearchBarArea = (props) => {
                             <Dropdown.Item onClick={() => setCategory("medical")}>Medical</Dropdown.Item>
                             <Dropdown.Item onClick={() => setCategory("poetry")}>Poetry</Dropdown.Item>
                         </DropdownButton>
+                        <label className="me-2">Sort by:</label>
                         <DropdownButton id={s["sort-dropdown"]} title={sort}>
                             <Dropdown.Item onClick={() => setSort("relevance")}>Relevance</Dropdown.Item>
                             <Dropdown.Item onClick={() => setSort("newest")}>Newest</Dropdown.Item>
                         </DropdownButton>
-                    </Row>
-                </Container>
+                    </Col>
+                {/*</Container>*/}
 
 
             </Form>
+
+            {/*<Row>*/}
+            {/*    <Col>*/}
+            {/*        <Form.Group>*/}
+            {/*            <Form.Control as="select" value={sort} onChange={(e) => setSort(e.target.value)}>*/}
+            {/*                <option value="relevance">Relevance</option>*/}
+            {/*                <option value="newest">Newest</option>*/}
+            {/*            </Form.Control>*/}
+            {/*        </Form.Group>*/}
+            {/*    </Col>*/}
+            {/*</Row>*/}
 
         </div>
     );
