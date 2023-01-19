@@ -3,6 +3,8 @@ import s from './SearchBarArea.module.css';
 
 import {Form, FormControl, Button, Dropdown, DropdownButton, Row, Col, InputGroup} from 'react-bootstrap';
 // Container,
+// export let API_KEY;
+
 const API_KEY = `${process.env.REACT_APP_API_KEY_GB}`;
 
 // const API_KEY = 'YourAPIKEY';
@@ -109,11 +111,11 @@ const SearchBarArea = ({API_KEY}) => {
             {/*    <Button variant="outline-light" type="submit">Search</Button>*/}
             {/*</Form>*/}
 
-            <Form className="d-flex justify-content-center custom-responsible-searchBar flex-column" onSubmit={handleSearch}>
+            <Form className="d-flex justify-content-center align-items-center custom-responsible-searchBar flex-column" onSubmit={handleSearch}>
                 {/*<Container>*/}
                 {/*<Row></Row>*/}
-                    <Col className="d-flex" lg={8} md={8} sm={10} xs={8}>
-                <InputGroup className="mb-3" >
+                    <Col className="d-flex mb-3" lg={8} md={8} sm={10} xs={11}>
+                <InputGroup className="" >
                         <FormControl type="text" placeholder="Search..." className="mr-2" style={{minHeight: "44px"}} value={searchTerm} onChange={(e) => setSearchTerm(e.target.value)} onFocus={handleSearch} onKeyPress={handleKeyPress}/>
                         {/*<FormControl type="text" placeholder="Search..." className="mr-2" style={{minHeight: "44px"}} value={searchTerm} onChange={props.handleSearch} />*/}
                         {/*<Button variant="outline-light" type="submit" onClick={handleSearch}>Search</Button>*/}
@@ -129,7 +131,7 @@ const SearchBarArea = ({API_KEY}) => {
                     {/*    </Col>*/}
                     {/*</Row>*/}
 
-                    <Col className="d-flex justify-content-center" >
+                    <Col className="d-flex justify-content-center align-items-center mb-3 " xs={11}>
                         <label className="me-2">Search categories:</label>
                         <DropdownButton id={s["category-dropdown"]} title={category} className="mr-2 me-4">
                             <Dropdown.Item onClick={() => setCategory("all")}>All</Dropdown.Item>
@@ -170,7 +172,7 @@ const SearchBarArea = ({API_KEY}) => {
             {/*        </li>*/}
             {/*    }*/}
             {/*</ul>        */}
-
+            {/*<br/>*/}
         </div>
 
     );
