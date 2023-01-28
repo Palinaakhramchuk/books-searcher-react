@@ -4,9 +4,14 @@ import s from './SearchBarArea.module.css';
 import {Form, FormControl, Button, Dropdown, DropdownButton, Row, Col, InputGroup} from 'react-bootstrap';
 // Container,
 
-const API_KEY = `${process.env.REACT_APP_API_KEY_GB}`;
+// const API_KEY = `${process.env.REACT_APP_API_KEY_GB}`;
+
+
+
 
 // const API_KEY = 'YourAPIKEY';
+// ask what is better: api key as a constant or
+// as a props to component: const SearchBarArea = ({API_KEY}) => {
 const SearchBarArea = ({API_KEY}) => {
     const [searchTerm, setSearchTerm] = useState("");
     const [searchResults, setSearchResults] = useState([]);
@@ -25,6 +30,12 @@ const SearchBarArea = ({API_KEY}) => {
     //     // Make API call to Google Books API with search term, category, and sort as query parameters
     //     // ...
     // }
+
+    const onClickHtest=()=>{
+        // console.log(`${process.env.REACT_APP_API_KEY_GB}`);
+        console.log(`${API_KEY}`);
+
+    };
     function handleSearch(e) {
     //     function handleSearch() {
         e.preventDefault();
@@ -182,6 +193,8 @@ const SearchBarArea = ({API_KEY}) => {
             <p>print env secret to HTML</p>
             {/*<pre>{process.env.REACT_APP_API_KEY_GB}</pre>*/}
             <div>{API_KEY}</div>
+            <button onClick={onClickHtest}></button>
+            <Button onClick={onClickHtest}></Button>
         </div>
 
     );
