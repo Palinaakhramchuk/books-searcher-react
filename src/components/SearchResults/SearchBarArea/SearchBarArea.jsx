@@ -3,7 +3,6 @@ import s from './SearchBarArea.module.css';
 
 import {Form, FormControl, Button, Dropdown, DropdownButton, Row, Col, InputGroup} from 'react-bootstrap';
 // Container,
-// export let API_KEY;
 
 const API_KEY = `${process.env.REACT_APP_API_KEY_GB}`;
 
@@ -11,6 +10,8 @@ const API_KEY = `${process.env.REACT_APP_API_KEY_GB}`;
 const SearchBarArea = ({API_KEY}) => {
     const [searchTerm, setSearchTerm] = useState("");
     const [searchResults, setSearchResults] = useState([]);
+    // const categories = ["all", "art", "biography", "computers", "history", "medical", "poetry"];
+    const categories = [{name:"all"}, {name:"art"}, {name:"biography"}, {name:"computers"}, {name:"history"}, {name:"medical"}, {name:"poetry"}];
     const [category, setCategory] = useState("all");
     const [sort, setSort] = useState("relevance");
 
@@ -134,14 +135,19 @@ const SearchBarArea = ({API_KEY}) => {
                     <Col className="d-flex justify-content-center align-items-center mb-3 " xs={11}>
                         <label className="me-2">Search categories:</label>
                         <DropdownButton id={s["category-dropdown"]} title={category} className="mr-2 me-4">
-                            <Dropdown.Item onClick={() => setCategory("all")}>All</Dropdown.Item>
-                            <Dropdown.Item onClick={() => setCategory("art")}>Art</Dropdown.Item>
-                            <Dropdown.Item onClick={() => setCategory("biography")}>Biography</Dropdown.Item>
-                            <Dropdown.Item onClick={() => setCategory("computers")}>Computers</Dropdown.Item>
-                            <Dropdown.Item onClick={() => setCategory("history")}>History</Dropdown.Item>
-                            <Dropdown.Item onClick={() => setCategory("medical")}>Medical</Dropdown.Item>
-                            <Dropdown.Item onClick={() => setCategory("poetry")}>Poetry</Dropdown.Item>
+                            {categories.map(( {name}) => (
+                                <Dropdown.Item onClick={() => setCategory(name)}>{name}</Dropdown.Item>
+                            ))}
                         </DropdownButton>
+                        {/*<DropdownButton id={s["category-dropdown"]} title={category} className="mr-2 me-4">*/}
+                        {/*    <Dropdown.Item onClick={() => setCategory("all")}>All</Dropdown.Item>*/}
+                        {/*    <Dropdown.Item onClick={() => setCategory("art")}>Art</Dropdown.Item>*/}
+                        {/*    <Dropdown.Item onClick={() => setCategory("biography")}>Biography</Dropdown.Item>*/}
+                        {/*    <Dropdown.Item onClick={() => setCategory("computers")}>Computers</Dropdown.Item>*/}
+                        {/*    <Dropdown.Item onClick={() => setCategory("history")}>History</Dropdown.Item>*/}
+                        {/*    <Dropdown.Item onClick={() => setCategory("medical")}>Medical</Dropdown.Item>*/}
+                        {/*    <Dropdown.Item onClick={() => setCategory("poetry")}>Poetry</Dropdown.Item>*/}
+                        {/*</DropdownButton>*/}
                         <label className="me-2">Sort by:</label>
                         <DropdownButton id={s["sort-dropdown"]} title={sort}>
                             <Dropdown.Item onClick={() => setSort("relevance")}>Relevance</Dropdown.Item>
@@ -173,6 +179,9 @@ const SearchBarArea = ({API_KEY}) => {
             {/*    }*/}
             {/*</ul>        */}
             {/*<br/>*/}
+            <p>print env secret to HTML</p>
+            {/*<pre>{process.env.REACT_APP_API_KEY_GB}</pre>*/}
+            <div>{API_KEY}</div>
         </div>
 
     );
